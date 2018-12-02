@@ -10,8 +10,8 @@ import net.opengis.gml.v_3_2_1.GeometryPropertyType;
 
 import org.jvnet.ogc.gml.v_3_2_1.ObjectFactoryInterface;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryFactory;
 
 public class JAXBContextFactory {
 

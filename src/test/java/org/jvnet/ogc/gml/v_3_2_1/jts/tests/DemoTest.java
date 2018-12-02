@@ -6,10 +6,8 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 
 import org.junit.Test;
-
-import com.vividsolutions.jts.geom.Point;
-import com.vividsolutions.jts.geom.Polygon;
-import com.vividsolutions.jts.io.WKTWriter;
+import org.locationtech.jts.geom.Point;
+import org.locationtech.jts.geom.Polygon;
 
 public class DemoTest {
 
@@ -17,8 +15,7 @@ public class DemoTest {
 	public void demonstrateContext() throws JAXBException, IOException
 	{
 		JAXBContext context = JAXBContext.newInstance("org.jvnet.ogc.gml.v_3_2_1.jts");
-		WKTWriter wktWriter = new WKTWriter();
-		
+
 		// Unmarshal
 		Point point = (Point) context.createUnmarshaller().unmarshal(getClass().getResource("Point[0].xml"));
 		
@@ -26,8 +23,7 @@ public class DemoTest {
 		
 		// Marshal
 		context.createMarshaller().marshal(point, System.out);
-//		
-		System.out.println(wktWriter.write(point));
-		
+		System.out.println();
+		context.createMarshaller().marshal(polygon, System.out);
 	}
 }

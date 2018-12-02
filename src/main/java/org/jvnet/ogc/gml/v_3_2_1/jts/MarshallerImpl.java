@@ -22,7 +22,7 @@ import net.opengis.gml.v_3_2_1.GeometryPropertyType;
 import org.w3c.dom.Node;
 import org.xml.sax.ContentHandler;
 
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 
 public class MarshallerImpl implements javax.xml.bind.Marshaller {
 

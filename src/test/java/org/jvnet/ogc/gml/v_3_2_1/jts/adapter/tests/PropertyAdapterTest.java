@@ -8,8 +8,10 @@ import javax.xml.bind.JAXBException;
 import javax.xml.transform.stream.StreamSource;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore(value="need to migrate test data to GML 3.2.1")
 public class PropertyAdapterTest {
 
 	@Test
@@ -23,9 +25,7 @@ public class PropertyAdapterTest {
 						new StreamSource(getClass().getResource("A0.xml")
 								.toString()));
 		
-		// TODO: need to migrate test data to GML 3.2.1
-		//Assert.assertNotNull(aElement.getValue().getOne());
-		// context.createMarshaller().marshal(aElement, System.out);
-
+		Assert.assertNotNull(aElement.getValue().getOne());
+		context.createMarshaller().marshal(aElement, System.out);
 	}
 }

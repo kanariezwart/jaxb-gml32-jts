@@ -13,9 +13,9 @@ import net.opengis.gml.v_3_2_1.MultiGeometryType;
 
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryCollection;
-import com.vividsolutions.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryCollection;
+import org.locationtech.jts.geom.GeometryFactory;
 
 @SuppressWarnings("nls")
 public class GML321ToJTSMultiGeometryConverter

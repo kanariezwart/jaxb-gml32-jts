@@ -16,6 +16,7 @@ import net.opengis.gml.v_3_2_1.AbstractGeometryType;
 import net.opengis.gml.v_3_2_1.GeometryPropertyType;
 import net.opengis.gml.v_3_2_1.ObjectFactory;
 
+import org.junit.Ignore;
 import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
@@ -28,13 +29,14 @@ import org.jvnet.ogc.gml.v_3_2_1.jts.JAXBContextImpl;
 import org.jvnet.ogc.gml.v_3_2_1.jts.JTSToGML321ConverterInterface;
 import org.jvnet.ogc.gml.v_3_2_1.jts.JTSToGML321GeometryConverter;
 
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.geom.PrecisionModel;
-import com.vividsolutions.jts.io.ParseException;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.PrecisionModel;
+import org.locationtech.jts.io.ParseException;
 
-//@RunWith(Theories.class)
+@Ignore(value="need to migrate test data to GML 3.2.1")
+@RunWith(Theories.class)
 public class GeometryRoundtripTest {
 
 	private static final double EPSILON = 0.1;
@@ -66,7 +68,6 @@ public class GeometryRoundtripTest {
 
 	};
 
-	/*
 	@Theory
 	public void roundtrip(Object[] item) throws JAXBException,
 			ConversionFailedException, ParseException {
@@ -106,6 +107,4 @@ public class GeometryRoundtripTest {
 		assertTrue(alpha.equalsExact(omega, EPSILON));
 		assertEquals(alpha.getSRID(), omega.getSRID());
 	}
-	*/
-
 }

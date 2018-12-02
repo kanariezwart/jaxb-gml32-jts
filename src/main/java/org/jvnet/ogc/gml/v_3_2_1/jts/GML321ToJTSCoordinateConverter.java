@@ -6,10 +6,10 @@ import net.opengis.gml.v_3_2_1.CoordinatesType;
 import net.opengis.gml.v_3_2_1.DirectPositionListType;
 import net.opengis.gml.v_3_2_1.DirectPositionType;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 
-import com.vividsolutions.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Coordinate;
 
 public class GML321ToJTSCoordinateConverter {
 	public Coordinate createCoordinate(ObjectLocator locator,

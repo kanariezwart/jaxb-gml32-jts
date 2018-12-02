@@ -12,10 +12,10 @@ import net.opengis.gml.v_3_2_1.MultiSurfaceType;
 
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 
-import com.vividsolutions.jts.geom.GeometryCollection;
-import com.vividsolutions.jts.geom.MultiLineString;
-import com.vividsolutions.jts.geom.MultiPoint;
-import com.vividsolutions.jts.geom.MultiPolygon;
+import org.locationtech.jts.geom.GeometryCollection;
+import org.locationtech.jts.geom.MultiLineString;
+import org.locationtech.jts.geom.MultiPoint;
+import org.locationtech.jts.geom.MultiPolygon;
 
 public class GML321ToJTSGeometryCollectionConverter
 		implements

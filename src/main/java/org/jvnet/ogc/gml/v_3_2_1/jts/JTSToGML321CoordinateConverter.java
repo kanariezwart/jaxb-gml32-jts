@@ -4,7 +4,7 @@ import org.jvnet.ogc.gml.v_3_2_1.ObjectFactoryInterface;
 
 import net.opengis.gml.v_3_2_1.DirectPositionType;
 
-import com.vividsolutions.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Coordinate;
 
 public class JTSToGML321CoordinateConverter {
 	private final ObjectFactoryInterface objectFactory;

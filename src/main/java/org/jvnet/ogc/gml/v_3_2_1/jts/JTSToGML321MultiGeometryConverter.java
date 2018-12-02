@@ -9,8 +9,8 @@ import net.opengis.gml.v_3_2_1.GeometryPropertyType;
 import net.opengis.gml.v_3_2_1.MultiGeometryPropertyType;
 import net.opengis.gml.v_3_2_1.MultiGeometryType;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryCollection;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryCollection;
 
 public class JTSToGML321MultiGeometryConverter
 		extends

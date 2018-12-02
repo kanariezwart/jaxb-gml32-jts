@@ -10,9 +10,9 @@ import net.opengis.gml.v_3_2_1.PolygonType;
 
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 
-import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.geom.MultiPolygon;
-import com.vividsolutions.jts.geom.Polygon;
+import org.locationtech.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.MultiPolygon;
+import org.locationtech.jts.geom.Polygon;
 
 public class GML321ToJTSMultiPolygonConverter
 		extends

@@ -9,8 +9,8 @@ import net.opengis.gml.v_3_2_1.LineStringType;
 import net.opengis.gml.v_3_2_1.MultiCurvePropertyType;
 import net.opengis.gml.v_3_2_1.MultiCurveType;
 
-import com.vividsolutions.jts.geom.LineString;
-import com.vividsolutions.jts.geom.MultiLineString;
+import org.locationtech.jts.geom.LineString;
+import org.locationtech.jts.geom.MultiLineString;
 
 public class JTSToGML321MultiLineStringConverter
 		extends

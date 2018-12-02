@@ -9,8 +9,8 @@ import net.opengis.gml.v_3_2_1.MultiSurfaceType;
 import net.opengis.gml.v_3_2_1.SurfacePropertyType;
 import net.opengis.gml.v_3_2_1.PolygonType;
 
-import com.vividsolutions.jts.geom.MultiPolygon;
-import com.vividsolutions.jts.geom.Polygon;
+import org.locationtech.jts.geom.MultiPolygon;
+import org.locationtech.jts.geom.Polygon;
 
 public class JTSToGML321MultiPolygonConverter
 		extends

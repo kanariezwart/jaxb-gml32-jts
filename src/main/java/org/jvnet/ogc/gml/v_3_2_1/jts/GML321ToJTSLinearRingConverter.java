@@ -13,10 +13,10 @@ import net.opengis.gml.v_3_2_1.PointType;
 
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.geom.LinearRing;
-import com.vividsolutions.jts.geom.Point;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.LinearRing;
+import org.locationtech.jts.geom.Point;
 
 public class GML321ToJTSLinearRingConverter
 		extends

@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import org.jvnet.ogc.gml.v_3_2_1.jts.adapter.PointTypeDomHandler;
 
-import com.vividsolutions.jts.geom.Point;
+import org.locationtech.jts.geom.Point;
 
 @XmlRootElement(name = "a")
 public class A {

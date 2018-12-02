@@ -5,7 +5,7 @@ import net.opengis.gml.v_3_2_1.AbstractGeometryType;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 
 
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 
 public interface GML321ToJTSSRIDConverterInterface {
 

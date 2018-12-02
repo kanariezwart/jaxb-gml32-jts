@@ -6,79 +6,70 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.transform.stream.StreamResult;
 
-import junit.framework.Assert;
-import junit.framework.TestCase;
+import static org.assertj.core.api.Assertions.assertThat;
 import net.opengis.gml.v_3_2_1.AbstractGeometryType;
 
+import org.junit.Before;
+import org.junit.Test;
+import org.jvnet.ogc.gml.v_3_2_1.ObjectFactory;
 import org.jvnet.ogc.gml.v_3_2_1.jts.JTSToGML321GeometryConverter;
 
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.geom.Point;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.Point;
 
-public class JTSToGML321ConverterTest extends TestCase {
+public class JTSToGML321ConverterTest {
 
 	private final GeometryFactory geometryFactory = new GeometryFactory();
 
-	private JAXBContext context;
-
 	private JTSToGML321GeometryConverter converter;
 
-	@Override
-	protected void setUp() throws Exception {
-		// context =
-		// JAXBContext.newInstance(ObjectFactory.class.getPackage().getName());
-		converter = new JTSToGML321GeometryConverter(
-
-		);
+	@Before
+	public void setUp() throws Exception {
+		converter = new JTSToGML321GeometryConverter();
 	}
 
-	protected void marshal(Object object) throws JAXBException {
-		final Marshaller marshaller = context.createMarshaller();
+	private void marshal(Object object) throws JAXBException {
+		JAXBContext context = JAXBContext.newInstance(ObjectFactory.class.getPackage().getName());
+		Marshaller marshaller = context.createMarshaller();
 		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 		marshaller.marshal(object, new StreamResult(System.out));
 	}
 
+	@Test
 	public void testPoint0() throws Exception {
-
 		final Point point = geometryFactory.createPoint(new Coordinate(10, 20));
 		point.setSRID(4326);
 		final JAXBElement<? extends AbstractGeometryType> element = converter
 				.createElement(point);
-		Assert.assertEquals(
-				"urn:ogc:def:crs:EPSG::4326", element.getValue().getSrsName()); //$NON-NLS-1$
+		assertThat("urn:ogc:def:crs:EPSG::4326").isEqualTo(element.getValue().getSrsName());
 		// marshal(element);
-
 	}
 
+	@Test
 	public void testPoint1() throws Exception {
 
 		final Point point = geometryFactory.createPoint(new Coordinate(10, 20));
 		point.setUserData("urn:ogc:def:crs:EPSG::4326"); //$NON-NLS-1$
 		final JAXBElement<? extends AbstractGeometryType> element = converter
 				.createElement(point);
-		Assert.assertEquals(
-				"urn:ogc:def:crs:EPSG::4326", element.getValue().getSrsName()); //$NON-NLS-1$
-
+		assertThat("urn:ogc:def:crs:EPSG::4326").isEqualTo(element.getValue().getSrsName());
 	}
 
+	@Test
 	public void testPoint2() throws Exception {
-
 		final Point point = geometryFactory.createPoint(new Coordinate(10, 20));
 		point.setUserData("urn:ogc:def:crs:OGC:1.3:CRS1"); //$NON-NLS-1$
 		final JAXBElement<? extends AbstractGeometryType> element = converter
 				.createElement(point);
-		Assert.assertEquals(
-				"urn:ogc:def:crs:OGC:1.3:CRS1", element.getValue().getSrsName()); //$NON-NLS-1$
-
+		assertThat("urn:ogc:def:crs:OGC:1.3:CRS1").isEqualTo(element.getValue().getSrsName());
 	}
 
+	@Test
 	public void testPoint3() throws Exception {
-
 		final Point point = geometryFactory.createPoint(new Coordinate(10, 20));
 		final JAXBElement<? extends AbstractGeometryType> element = converter
 				.createElement(point);
-		Assert.assertEquals(null, element.getValue().getSrsName());
-
+		assertThat(element.getValue().getSrsName()).isNull();
 	}
 }

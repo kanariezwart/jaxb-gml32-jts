@@ -4,7 +4,7 @@ import javax.xml.bind.JAXBElement;
 
 import net.opengis.gml.v_3_2_1.AbstractGeometryType;
 
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 
 public interface JTSToGML321ConverterInterface<G, P, J extends Geometry> {
   G createGeometryType(J geometry);

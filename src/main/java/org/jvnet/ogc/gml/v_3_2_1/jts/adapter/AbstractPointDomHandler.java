@@ -17,8 +17,8 @@ import org.jvnet.ogc.gml.v_3_2_1.jts.JTSToGML321CoordinateConverter;
 import org.jvnet.ogc.gml.v_3_2_1.jts.JTSToGML321PointConverter;
 import org.jvnet.ogc.gml.v_3_2_1.jts.JTSToGML321SRSReferenceGroupConverterInterface;
 
-import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.geom.Point;
+import org.locationtech.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.Point;
 
 public abstract class AbstractPointDomHandler extends
 		AbstractGeometryDomHandler<PointType, PointPropertyType, Point> {

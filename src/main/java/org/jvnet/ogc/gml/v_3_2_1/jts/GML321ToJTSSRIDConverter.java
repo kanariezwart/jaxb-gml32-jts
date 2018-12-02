@@ -5,11 +5,11 @@ import java.text.ParseException;
 
 import net.opengis.gml.v_3_2_1.AbstractGeometryType;
 
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.jvnet.jaxb2_commons.locator.ObjectLocator;
 
 
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 
 public class GML321ToJTSSRIDConverter implements
 		GML321ToJTSSRIDConverterInterface {

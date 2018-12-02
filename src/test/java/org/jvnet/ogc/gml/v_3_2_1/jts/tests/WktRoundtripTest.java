@@ -11,10 +11,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.dom.DOMSource;
 
-import net.opengis.gml.v_3_2_1.AbstractGeometryType;
-import net.opengis.gml.v_3_2_1.GeometryPropertyType;
-import net.opengis.gml.v_3_2_1.ObjectFactory;
-
+import org.junit.Ignore;
 import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
@@ -26,12 +23,15 @@ import org.jvnet.ogc.gml.v_3_2_1.jts.GML321ToJTSGeometryConverter;
 import org.jvnet.ogc.gml.v_3_2_1.jts.JAXBContextImpl;
 import org.jvnet.ogc.gml.v_3_2_1.jts.JTSToGML321ConverterInterface;
 import org.jvnet.ogc.gml.v_3_2_1.jts.JTSToGML321GeometryConverter;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.io.ParseException;
+import org.locationtech.jts.io.WKTReader;
 
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.io.ParseException;
-import com.vividsolutions.jts.io.WKTReader;
+import net.opengis.gml.v_3_2_1.GeometryPropertyType;
+import net.opengis.gml.v_3_2_1.ObjectFactory;
 
-//@RunWith(Theories.class)
+@Ignore(value="need to migrate test data to GML 3.2.1")
+@RunWith(Theories.class)
 public class WktRoundtripTest {
 
 	private static final double EPSILON = 0.1;
@@ -96,7 +96,6 @@ public class WktRoundtripTest {
 
 	};
 
-	/*
 	@Theory
 	public void roundtrip(String[] item) throws JAXBException,
 			ConversionFailedException, ParseException {
@@ -130,5 +129,4 @@ public class WktRoundtripTest {
 		final Geometry omega = new WKTReader().read(item[1]);
 		assertTrue(alpha.equalsExact(omega, EPSILON));
 	}
-	*/
 }

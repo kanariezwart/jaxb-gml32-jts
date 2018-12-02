@@ -25,7 +25,7 @@ import org.jvnet.jaxb2_commons.locator.DefaultRootObjectLocator;
 import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
 
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 
 public class UnmarshallerImpl implements javax.xml.bind.Unmarshaller {
 

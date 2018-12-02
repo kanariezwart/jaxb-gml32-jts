@@ -9,8 +9,8 @@ import net.opengis.gml.v_3_2_1.LinearRingType;
 import net.opengis.gml.v_3_2_1.SurfacePropertyType;
 import net.opengis.gml.v_3_2_1.PolygonType;
 
-import com.vividsolutions.jts.geom.LinearRing;
-import com.vividsolutions.jts.geom.Polygon;
+import org.locationtech.jts.geom.LinearRing;
+import org.locationtech.jts.geom.Polygon;
 
 public class JTSToGML321PolygonConverter extends
 		AbstractJTSToGML321Converter<PolygonType, SurfacePropertyType, Polygon> {

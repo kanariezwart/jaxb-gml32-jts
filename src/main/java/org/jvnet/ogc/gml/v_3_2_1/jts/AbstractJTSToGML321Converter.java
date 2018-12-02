@@ -4,7 +4,7 @@ import org.jvnet.ogc.gml.v_3_2_1.ObjectFactoryInterface;
 
 import net.opengis.gml.v_3_2_1.AbstractGeometryType;
 
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 
 public abstract class AbstractJTSToGML321Converter<G, P, J extends Geometry>
     implements

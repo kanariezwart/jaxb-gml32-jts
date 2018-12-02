@@ -8,7 +8,7 @@ import javax.xml.bind.Validator;
 import net.opengis.gml.v_3_2_1.AbstractGeometryType;
 import net.opengis.gml.v_3_2_1.GeometryPropertyType;
 
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 
 @SuppressWarnings("deprecation")
 public class JAXBContextImpl extends javax.xml.bind.JAXBContext {
